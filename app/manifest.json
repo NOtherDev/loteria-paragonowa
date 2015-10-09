@@ -1,0 +1,34 @@
+{
+  "name": "loteria",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Wprowadzaj paragony szybciej",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "scripts/chromereload.js",
+      "scripts/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://loteriaparagonowa.gov.pl/*"
+      ],
+      "js": [
+        "scripts/loteria.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
