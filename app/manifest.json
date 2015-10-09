@@ -7,11 +7,9 @@
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
   },
-  "default_locale": "en",
   "background": {
     "scripts": [
-      "scripts/chromereload.js",
-      "scripts/background.js"
+      "scripts/chromereload.js"
     ]
   },
   "content_scripts": [
@@ -22,13 +20,14 @@
       "js": [
         "scripts/loteria.js"
       ],
+      "css": [
+        "styles/loteria.css"
+      ],
       "run_at": "document_end",
       "all_frames": false
     }
   ],
   "permissions": [
-    "tabs",
-    "http://*/*",
-    "https://*/*"
+    "https://loteriaparagonowa.gov.pl/*"
   ]
 }
