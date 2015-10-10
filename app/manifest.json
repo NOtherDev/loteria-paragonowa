@@ -1,8 +1,8 @@
 {
-  "name": "loteria",
+  "name": "Loteria Paragonowa",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Wprowadzaj paragony szybciej",
+  "description": "Zestaw usprawnień do formularza wprowadzania paragonów w Narodowej Loterii Paragonowej. Zapamiętuje często używane nr kas i NIP-y, automatycznie wypełnia datę i kategorię, oblicza wartość zadania i zaznacza zgody.",
   "icons": {
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
