@@ -1,6 +1,6 @@
 {
   "name": "Loteria Paragonowa",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Zestaw usprawnień do formularza wprowadzania paragonów w Narodowej Loterii Paragonowej. Zapamiętuje często używane nr kas i NIP-y, automatycznie wypełnia datę i kategorię, oblicza wartość zadania i zaznacza zgody.",
   "icons": {

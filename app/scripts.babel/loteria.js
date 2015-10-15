@@ -4,7 +4,7 @@ console.log('Ładowanie przyspieszacza loterii.');
 
 function modify() {
   function normalizeNumber(number) {
-    return number.replace(/[^0-9A-Za-z]/, '').toUpperCase();
+    return number.replace(/[^0-9A-Za-z]/g, '').toUpperCase();
   }
 
   function removeFromTabIndex($field) {
@@ -60,24 +60,26 @@ function modify() {
     solveCaptcha();
     checkPermissions();
 
-    let $joinedNrKasyField = joinFields('nr_kasy');
+    let $nrKasyField = $('#nr_kasy_1');
     let $joinedNipField = joinFields('nip');
 
     removeFromTabIndex($('button.ui-datepicker-trigger'));
-    $joinedNrKasyField.focus();
+    $nrKasyField.prop('placeholder', '').focus();
 
-    $joinedNrKasyField.change(function () {
+    $nrKasyField.change(function () {
       let nrKasy = normalizeNumber(this.value);
       $joinedNipField.val(localStorage.getItem(nrKasy));
     });
 
     $('#registration-form').submit(() => {
-      let nrKasy = normalizeNumber($joinedNrKasyField.val());
+      let kwotaGr = $('#kwota_gr');
+      kwotaGr.val(kwotaGr.val() || '00');
+
+      let nrKasy = normalizeNumber($nrKasyField.val());
       let nip = normalizeNumber($joinedNipField.val());
 
       localStorage.setItem(nrKasy, nip);
 
-      $joinedNrKasyField.remove();
       $joinedNipField.remove();
     });
 
